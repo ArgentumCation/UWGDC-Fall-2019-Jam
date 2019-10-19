@@ -16,6 +16,9 @@ public class HealthText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthText.text = "Health: " + Mathf.RoundToInt(player.health);
+        if (player == null)
+            healthText.text = "you died :(";
+        else
+            healthText.text = "Health: " + Mathf.RoundToInt(player.health);
     }
 }
