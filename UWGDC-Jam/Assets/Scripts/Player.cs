@@ -10,8 +10,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         Vector3 vel = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        vel *= speed * Time.deltaTime;
-        transform.position += vel;
+        vel *= speed;
+        transform.position += vel * Time.deltaTime;
+        if (vel.sqrMagnitude > 0.01)
+            transform.rotation = Quaternion.Euler(0, 0, Vector3.SignedAngle(Vector3.right, vel, Vector3.forward));
     }
 
     public void Hurt(float amount)
