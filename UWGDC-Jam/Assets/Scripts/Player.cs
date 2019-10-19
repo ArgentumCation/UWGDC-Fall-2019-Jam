@@ -12,4 +12,9 @@ public class Player : MonoBehaviour
         vel *= speed * Time.deltaTime;
         transform.position += vel;
     }
+
+    public void Hurt(float amount)
+    {
+        Debug.Log("ouch");
+    }
 }
