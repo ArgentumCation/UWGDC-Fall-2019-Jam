@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject item;
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        var player = collision.gameObject.GetComponent<Player>();
+        if (player != null)
+        {
+            var instance = Instantiate(item);
+            player.GiveItem(instance);
+            Destroy(gameObject);
+        }
     }
 }
