@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private AudioSource hurtSound;
     private Rigidbody2D body;
     private bool mouseAim = true;
+    private GameObject weapon;
 
     void Start()
     {
@@ -63,5 +64,15 @@ public class Player : MonoBehaviour
         render.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         render.color = Color.white;
+    }
+
+    public void GiveItem(GameObject item)
+    {
+        item.transform.parent = transform;
+        item.transform.localPosition = Vector3.zero;
+        item.transform.localRotation = Quaternion.identity;
+        if (weapon != null)
+            Destroy(weapon.gameObject);
+        weapon = item;
     }
 }
