@@ -4,8 +4,8 @@
 ## Pickups
 
 Need art:
-- Zapper
-- Power glove
+- ~~Zapper~~
+- ~~Power glove~~
 - Token (health)
 - Roller skates
 - Robot
