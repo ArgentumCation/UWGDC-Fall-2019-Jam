@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             // hurt
+            Destroy(enemy.gameObject);
             Destroy(gameObject);
         }
     }
