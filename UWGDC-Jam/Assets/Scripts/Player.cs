@@ -6,12 +6,16 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public float health = 100;
+    private SpriteRenderer render;
+    private AudioSource hurtSound;
     private Rigidbody2D body;
     private bool mouseAim = true;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        hurtSound = GetComponent<AudioSource>();
+        render = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Update()
@@ -20,6 +24,8 @@ public class Player : MonoBehaviour
         {
             health = 0;
             Destroy(gameObject);
+            GameObject.Find("Die").GetComponent<AudioSource>().Play();
+            GameObject.Find("EventText").GetComponent<EventMessage>().ShowMesssage("YOU DIED");
         }
     }
 
@@ -45,5 +51,17 @@ public class Player : MonoBehaviour
     public void Hurt(float amount)
     {
         health -= amount;
+        if (health > 0)
+        {
+            hurtSound.Play();
+            StartCoroutine(HurtFlash());
+        }
+    }
+
+    private IEnumerator HurtFlash()
+    {
+        render.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        render.color = Color.white;
     }
 }
