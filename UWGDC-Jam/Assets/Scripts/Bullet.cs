@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        var enemy = collision.gameObject.GetComponent<Enemy>();
+        var enemy = collision.gameObject.GetComponent<EnemyClass>();
         if (enemy != null)
         {
             // hurt
