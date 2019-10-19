@@ -5,6 +5,7 @@ using UnityEngine;
 public class BasicGun : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    public int ammo;
     private AudioSource sound;
 
     void Start()
@@ -27,5 +28,8 @@ public class BasicGun : MonoBehaviour
         bulletBody.transform.position = transform.position;
         bulletBody.transform.rotation = transform.rotation;
         sound.Play();
+        ammo--;
+        if (ammo <= 0)
+            Destroy(gameObject);
     }
 }

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2351475260314511759, guid: ff08a8808902c5048a952d45fa9d20e3,
     type: 3}
+  ammo: 50
 --- !u!82 &5141341937367908396
 AudioSource:
   m_ObjectHideFlags: 0
