@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public float health = 100;
+    private SpriteRenderer render;
     private AudioSource hurtSound;
     private Rigidbody2D body;
     private bool mouseAim = true;
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         hurtSound = GetComponent<AudioSource>();
+        render = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Update()
@@ -50,6 +52,16 @@ public class Player : MonoBehaviour
     {
         health -= amount;
         if (health > 0)
+        {
             hurtSound.Play();
+            StartCoroutine(HurtFlash());
+        }
+    }
+
+    private IEnumerator HurtFlash()
+    {
+        render.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        render.color = Color.white;
     }
 }
