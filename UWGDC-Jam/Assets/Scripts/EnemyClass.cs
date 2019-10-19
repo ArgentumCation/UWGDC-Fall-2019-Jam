@@ -6,7 +6,7 @@ public class EnemyClass : MonoBehaviour
 {
     public float enemyHealth = 20;
 
-    public void Hurt(float amount)
+    public virtual void Hurt(float amount)
     {
         enemyHealth -= amount;
     }
