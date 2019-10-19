@@ -9,6 +9,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (health < 0)
+        {
+            health = 0;
+            Destroy(gameObject);
+            return;
+        }
+
         Vector3 vel = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
         vel *= speed;
         transform.position += vel * Time.deltaTime;
