@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8717794610832934258}
   - component: {fileID: 4164655467767861476}
   - component: {fileID: 5971353374383956481}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: sPRITE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 2448135946282986761}
   - component: {fileID: 5770494797938754050}
   - component: {fileID: 7836307762458453840}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  damage: 5
 --- !u!58 &5770494797938754050
 CircleCollider2D:
   m_ObjectHideFlags: 0
