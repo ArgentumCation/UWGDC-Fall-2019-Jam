@@ -12,6 +12,9 @@ public class DelaySequence : MonoBehaviour
         public UnityEvent action;
     }
 
+    public int startThreshold = 0;
+    private int thresholdCount = 0;
+
     public List<Step> sequence = new List<Step>();
 
     private float lastTime;
@@ -20,12 +23,23 @@ public class DelaySequence : MonoBehaviour
     void OnEnable()
     {
         stepI = 0;
-        lastTime = Time.time;
+        lastTime = -1;
+    }
+
+    public void ThresholdTrigger()
+    {
+        thresholdCount++;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (thresholdCount >= startThreshold && lastTime < 0)
+            lastTime = Time.time;
+
+        if (lastTime < 0)
+            return;
+
         if (stepI < sequence.Count && Time.time > lastTime + sequence[stepI].delay)
         {
             sequence[stepI].action.Invoke();
