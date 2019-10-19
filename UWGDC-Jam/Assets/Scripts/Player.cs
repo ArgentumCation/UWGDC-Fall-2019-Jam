@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
 
     public void Hurt(float amount)
     {
-        Debug.Log("ouch");
         health -= amount;
     }
 }
