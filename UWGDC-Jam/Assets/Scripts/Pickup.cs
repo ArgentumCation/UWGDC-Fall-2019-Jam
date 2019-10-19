@@ -13,6 +13,7 @@ public class Pickup : MonoBehaviour
         {
             var instance = Instantiate(item);
             player.GiveItem(instance);
+            GameObject.Find("Pickup").GetComponent<AudioSource>().Play();
             Destroy(gameObject);
         }
     }
