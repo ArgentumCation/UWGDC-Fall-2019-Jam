@@ -12,7 +12,7 @@ public class EnemySpawn : MonoBehaviour
     private float nextSpawnTime;
     private int spawned;
 
-    public UnityEvent allEnemiesDead;
+    public DelaySequence allEnemiesDead;
     private bool calledDeadEvent = false;
 
     void OnEnable()
@@ -50,7 +50,7 @@ public class EnemySpawn : MonoBehaviour
         if (spawned == spawnCount && !calledDeadEvent && transform.childCount == 0)
         {
             calledDeadEvent = true;
-            allEnemiesDead.Invoke();
+            allEnemiesDead.ThresholdTrigger();
         }
     }
 }
