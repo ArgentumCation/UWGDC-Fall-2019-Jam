@@ -5,11 +5,13 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private Player target;
+    private Rigidbody2D body;
     public float speed;
     // Start is called before the first frame update
     void Start()
     {
         target = Component.FindObjectOfType<Player>();
+        body = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -17,7 +19,7 @@ public class Enemy : MonoBehaviour
     {
         Vector3 toTarget = target.transform.position - transform.position;
         toTarget = toTarget.normalized;
-        toTarget *= speed * Time.deltaTime;
-        transform.position += toTarget;
+        toTarget *= speed;
+        body.velocity = toTarget;
     }
 }
