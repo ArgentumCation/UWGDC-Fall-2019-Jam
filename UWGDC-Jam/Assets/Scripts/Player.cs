@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
             health = 0;
             Destroy(gameObject);
             GameObject.Find("Die").GetComponent<AudioSource>().Play();
+            GameObject.Find("EventText").GetComponent<EventMessage>().ShowMesssage("YOU DIED");
         }
     }
 

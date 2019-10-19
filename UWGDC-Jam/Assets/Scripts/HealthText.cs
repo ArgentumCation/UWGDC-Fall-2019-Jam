@@ -17,7 +17,7 @@ public class HealthText : MonoBehaviour
     void Update()
     {
         if (player == null)
-            healthText.text = "you died :(";
+            healthText.text = "Health: 0";
         else
             healthText.text = "Health: " + Mathf.RoundToInt(player.health);
     }
