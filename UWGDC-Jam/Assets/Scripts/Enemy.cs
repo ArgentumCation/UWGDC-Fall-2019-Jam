@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     private Vector3 VectorToTarget()
     {
-        Vector3 toTarget = (target.transform.position + RandomInCircle() * 2) - transform.position;
+        Vector3 toTarget = (target.transform.position + RandomInCircle()) - transform.position;
         return toTarget.normalized;
     }
 
