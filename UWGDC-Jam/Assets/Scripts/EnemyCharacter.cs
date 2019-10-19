@@ -19,7 +19,9 @@ public class EnemyCharacter : EnemyClass
 
     private Vector3 VectorToTarget()
     {
-        Vector3 toTarget = (target.transform.position + RandomInCircle() * 2) - transform.position;
+        if (target == null)
+            return Vector3.zero;
+        Vector3 toTarget = (target.transform.position + RandomInCircle()) - transform.position;
         return toTarget.normalized;
     }
 
