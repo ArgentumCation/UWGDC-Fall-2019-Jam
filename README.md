@@ -6,7 +6,7 @@
 Need art:
 - ~~Zapper~~
 - ~~Power glove~~
-- Token (health)
+- ~~Token (health)~~
 - Roller skates
 - Robot
 
