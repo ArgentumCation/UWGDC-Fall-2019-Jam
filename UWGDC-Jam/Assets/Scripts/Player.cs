@@ -6,12 +6,14 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public float health = 100;
+    private AudioSource hurtSound;
     private Rigidbody2D body;
     private bool mouseAim = true;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        hurtSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
         {
             health = 0;
             Destroy(gameObject);
+            GameObject.Find("Die").GetComponent<AudioSource>().Play();
         }
     }
 
@@ -45,5 +48,7 @@ public class Player : MonoBehaviour
     public void Hurt(float amount)
     {
         health -= amount;
+        if (health > 0)
+            hurtSound.Play();
     }
 }
