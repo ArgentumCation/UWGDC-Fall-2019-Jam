@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (health < 0)
+        if (health <= 0)
         {
             health = 0;
             Destroy(gameObject);

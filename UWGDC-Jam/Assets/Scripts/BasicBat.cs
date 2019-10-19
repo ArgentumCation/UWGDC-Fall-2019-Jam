@@ -10,7 +10,7 @@ public class BasicBat : MonoBehaviour
     {
         
     }
-    public int batDamage = 5;
+    public float batDamage = 5;
     // Update is called once per frame
     void Update()
     {
@@ -36,8 +36,7 @@ public class BasicBat : MonoBehaviour
       //  Debug.Log("Objects Colliding");
         if (Enemy != null && isSwinging == true)
         {
-          
-            Enemy.enemyHealth -= batDamage;
+            Enemy.Hurt(batDamage);
             Debug.Log("Hit");
             isSwinging = false;
         }

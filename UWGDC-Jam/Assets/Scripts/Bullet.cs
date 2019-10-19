@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed;
+    public float damage = 5;
     private Rigidbody2D body;
 
     void Start()
@@ -18,8 +19,7 @@ public class Bullet : MonoBehaviour
         var enemy = collision.gameObject.GetComponent<EnemyClass>();
         if (enemy != null)
         {
-            // hurt
-            Destroy(enemy.gameObject);
+            enemy.Hurt(damage);
             Destroy(gameObject);
         }
     }

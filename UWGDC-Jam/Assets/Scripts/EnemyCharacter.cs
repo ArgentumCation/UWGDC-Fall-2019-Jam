@@ -37,10 +37,6 @@ public class EnemyCharacter : EnemyClass
         {
             body.velocity = VectorToTarget() * speed;
         }
-        //if (enemyHealth <= 0)
-        //{
-        //    Destroy(gameObject);
-        //}
     }
 
     void OnCollisionEnter2D(Collision2D collision)
