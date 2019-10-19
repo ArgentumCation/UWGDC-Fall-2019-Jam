@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyClass : MonoBehaviour
 {
-    public int enemyHealth = 20;
-    // Start is called before the first frame update
-    void Start()
+    public float enemyHealth = 20;
+
+    public virtual void Hurt(float amount)
     {
-        Debug.Log("EnemyClass start");
+        enemyHealth -= amount;
     }
 
     // Update is called once per frame

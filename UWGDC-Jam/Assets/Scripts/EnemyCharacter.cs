@@ -19,7 +19,9 @@ public class EnemyCharacter : EnemyClass
 
     private Vector3 VectorToTarget()
     {
-        Vector3 toTarget = (target.transform.position + RandomInCircle() * 2) - transform.position;
+        if (target == null)
+            return Vector3.zero;
+        Vector3 toTarget = (target.transform.position + RandomInCircle()) - transform.position;
         return toTarget.normalized;
     }
 
@@ -37,10 +39,6 @@ public class EnemyCharacter : EnemyClass
         {
             body.velocity = VectorToTarget() * speed;
         }
-        //if (enemyHealth <= 0)
-        //{
-        //    Destroy(gameObject);
-        //}
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -61,5 +59,11 @@ public class EnemyCharacter : EnemyClass
         yield return new WaitForSeconds(0.1f);
         body.isKinematic = false;
         moveToPlayer = true;
+    }
+
+    public override void Hurt(float amount)
+    {
+        base.Hurt(amount);
+        StartCoroutine(JumpBack());
     }
 }
