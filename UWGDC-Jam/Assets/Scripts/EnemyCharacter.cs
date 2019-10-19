@@ -60,4 +60,10 @@ public class EnemyCharacter : EnemyClass
         body.isKinematic = false;
         moveToPlayer = true;
     }
+
+    public override void Hurt(float amount)
+    {
+        base.Hurt(amount);
+        StartCoroutine(JumpBack());
+    }
 }
