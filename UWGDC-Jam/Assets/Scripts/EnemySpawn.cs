@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySpawn : MonoBehaviour
 {
@@ -11,10 +12,14 @@ public class EnemySpawn : MonoBehaviour
     private float nextSpawnTime;
     private int spawned;
 
+    public UnityEvent allEnemiesDead;
+    private bool calledDeadEvent = false;
+
     void OnEnable()
     {
         SetNextSpawnTime();
         spawned = 0;
+        calledDeadEvent = false;
     }
 
     private void SetNextSpawnTime()
@@ -38,7 +43,14 @@ public class EnemySpawn : MonoBehaviour
             Vector3 pointInBounds = new Vector3(Random.Range(bounds.min.x, bounds.max.x), Random.Range(bounds.min.y, bounds.max.y), 0);
             var enemy = Instantiate(enemyPrefab);
             enemy.transform.position = pointInBounds;
+            enemy.transform.parent = transform;
             spawned++;
+        }
+
+        if (spawned == spawnCount && !calledDeadEvent && transform.childCount == 0)
+        {
+            calledDeadEvent = true;
+            allEnemiesDead.Invoke();
         }
     }
 }
