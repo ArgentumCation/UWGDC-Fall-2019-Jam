@@ -6,6 +6,12 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public float health = 100;
+    private Rigidbody2D body;
+
+    void Start()
+    {
+        body = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
@@ -13,12 +19,13 @@ public class Player : MonoBehaviour
         {
             health = 0;
             Destroy(gameObject);
-            return;
         }
+    }
 
-        Vector3 vel = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        vel *= speed;
-        transform.position += vel * Time.deltaTime;
+    void FixedUpdate()
+    {
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        body.velocity = move * speed;
 
         Vector2 aim = new Vector2(Input.GetAxis("Aim X"), Input.GetAxis("Aim Y"));
         if (aim.magnitude > 0.01)
