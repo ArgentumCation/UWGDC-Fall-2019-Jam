@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D body;
     public float speed;
     private bool moveToPlayer = true;
+    public int enemyHealth = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,10 @@ public class Enemy : MonoBehaviour
         if (moveToPlayer)
         {
             body.velocity = VectorToTarget() * speed;
+        }
+        if (enemyHealth <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
