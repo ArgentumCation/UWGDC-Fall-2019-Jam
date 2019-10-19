@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed;
+    public float health = 100;
 
     void Update()
     {
@@ -16,5 +17,6 @@ public class Player : MonoBehaviour
     public void Hurt(float amount)
     {
         Debug.Log("ouch");
+        health -= amount;
     }
 }
