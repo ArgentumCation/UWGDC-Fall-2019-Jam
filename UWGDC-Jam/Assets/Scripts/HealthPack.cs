@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthPack : MonoBehaviour
 {
 
-    public float healthStored = 50;
+    public float healthStored = 10;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,6 +13,7 @@ public class HealthPack : MonoBehaviour
         if (player != null)
         {
             player.health += healthStored;
+            GameObject.Find("Coin").GetComponent<AudioSource>().Play();
             Destroy(gameObject);
         }
     }
