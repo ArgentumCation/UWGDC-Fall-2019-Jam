@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public float health = 100;
+    public AudioSource emptySound;
     private SpriteRenderer render;
     private AudioSource hurtSound;
     private Rigidbody2D body;
@@ -28,6 +29,8 @@ public class Player : MonoBehaviour
             GameObject.Find("Die").GetComponent<AudioSource>().Play();
             GameObject.Find("EventText").GetComponent<EventMessage>().ShowMesssage("YOU DIED");
         }
+        if (weapon == null && Input.GetButtonDown("Fire1"))
+            emptySound.Play();
     }
 
     void FixedUpdate()
