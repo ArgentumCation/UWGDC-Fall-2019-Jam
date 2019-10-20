@@ -7,10 +7,21 @@ public class Robot : BasicGun
     private const float RANGE = 3.5f;
     private const float RATE = 0.5f;
 
+    private bool activated = false;
+
     public override void Start()
     {
         base.Start();
-        StartCoroutine(RobotCo());
+    }
+
+    void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (!activated && collider.gameObject.GetComponent<Player>() != null)
+        {
+            transform.localScale *= 2;
+            activated = true;
+            StartCoroutine(RobotCo());
+        }
     }
 
     private IEnumerator RobotCo()
