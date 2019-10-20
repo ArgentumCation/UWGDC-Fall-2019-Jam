@@ -17,8 +17,8 @@ public class HealthText : MonoBehaviour
     void Update()
     {
         if (player == null)
-            healthText.text = "Health: 0";
+            healthText.text = "0";
         else
-            healthText.text = "Health: " + Mathf.RoundToInt(player.health);
+            healthText.text = Mathf.RoundToInt(player.health).ToString();
     }
 }

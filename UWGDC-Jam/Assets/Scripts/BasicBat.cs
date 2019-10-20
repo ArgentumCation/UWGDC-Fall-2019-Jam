@@ -4,12 +4,28 @@ using UnityEngine;
 
 public class BasicBat : MonoBehaviour
 {
-    bool isSwinging = false;
+
+    private BoxCollider2D batHitBox;
+    private SpriteRenderer batBody;
+    private bool isSwinging = false;
+
+    private Vector3 fistMovement = new Vector3(0.12f, 0.23f, 0);
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.transform.localPosition = fistMovement;
+
+        batHitBox = GetComponent<BoxCollider2D>();
+        batBody = GetComponent<SpriteRenderer>();
+        batHitBox.enabled = false;
+        batBody.enabled = false;
     }
+
+
+
+
     public float batDamage = 5;
     // Update is called once per frame
     void Update()
@@ -17,16 +33,26 @@ public class BasicBat : MonoBehaviour
         if (Input.GetButtonDown("Fire2"))
         {
             StartCoroutine(swing());
+
+        }
+        if (isSwinging)
+        {
+            this.transform.localPosition += new Vector3(0.15f, 0, 0);
         }
     }
 
+    
+
     public IEnumerator swing()
     {
-       // Debug.Log("Swinging");
+        batHitBox.enabled = true;
+        batBody.enabled = true;
         isSwinging = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         isSwinging = false;
-       // Debug.Log("Swung");
+        batHitBox.enabled = false;
+        batBody.enabled = false;
+        this.transform.localPosition = new Vector3(0.12f, 0.23f, 0);
     }
 
 
