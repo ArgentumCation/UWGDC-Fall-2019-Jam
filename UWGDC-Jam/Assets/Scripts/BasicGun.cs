@@ -9,7 +9,7 @@ public class BasicGun : MonoBehaviour
     public bool isGlitch;
     private AudioSource sound;
 
-    void Start()
+    public virtual void Start()
     {
         sound = GetComponent<AudioSource>();
     }
@@ -26,7 +26,7 @@ public class BasicGun : MonoBehaviour
             Component.FindObjectOfType<MusicController>().Main();
     }
 
-    void Update()
+    public virtual void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {

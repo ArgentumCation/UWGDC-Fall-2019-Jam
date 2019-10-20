@@ -70,9 +70,6 @@ public class Player : MonoBehaviour
         this.speed *= 2/3f;
     }
 
-
-
-
     public void Hurt(float amount)
     {
         health -= amount;
