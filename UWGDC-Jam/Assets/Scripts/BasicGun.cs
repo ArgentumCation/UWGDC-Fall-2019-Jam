@@ -12,18 +12,20 @@ public class BasicGun : MonoBehaviour
     public virtual void Start()
     {
         sound = GetComponent<AudioSource>();
-    }
-
-    void OnEnable()
-    {
         if (isGlitch)
+        {
             Component.FindObjectOfType<MusicController>().Glitch();
+            Component.FindObjectOfType<GlitchEffect>().enabled = true;
+        }
     }
 
     void OnDisable()
     {
         if (isGlitch)
+        {
             Component.FindObjectOfType<MusicController>().Main();
+            Component.FindObjectOfType<GlitchEffect>().enabled = false;
+        }
     }
 
     public virtual void Update()
