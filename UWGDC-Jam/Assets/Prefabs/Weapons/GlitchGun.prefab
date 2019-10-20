@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3846329079974853976}
   - component: {fileID: 5141341937367908396}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: GlitchGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3c1a4cdba5e8e47a1ffac05431ca83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4585141057513843847, guid: 0b6d5ae1fd4010e41967affa14a8ccce,
+  bulletPrefab: {fileID: 4585141057513843847, guid: da619aa6ceac8494d9fb64524b1a996a,
     type: 3}
-  ammo: 100
+  ammo: 8
+  isGlitch: 1
 --- !u!82 &5141341937367908396
 AudioSource:
   m_ObjectHideFlags: 0
