@@ -9,7 +9,7 @@ public class BasicBat : MonoBehaviour
     private SpriteRenderer batBody;
     private bool isSwinging = false;
 
-    private Vector3 fistMovement = new Vector3(0.12f, 0.23f, 0);
+    private Vector3 fistMovement = new Vector3(-0.18f, 0.23f, 0);
     
 
     // Start is called before the first frame update
@@ -52,7 +52,7 @@ public class BasicBat : MonoBehaviour
         isSwinging = false;
         batHitBox.enabled = false;
         batBody.enabled = false;
-        this.transform.localPosition = new Vector3(0.12f, 0.23f, 0);
+        this.transform.localPosition = new Vector3(-0.18f, 0.23f, 0);
     }
 
 
