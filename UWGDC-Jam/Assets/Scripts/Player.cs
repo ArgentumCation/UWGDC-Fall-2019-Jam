@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     private Rigidbody2D body;
     private bool mouseAim = true;
     private GameObject weapon;
-    private float startingBoostTime = 0f;
 
     void Start()
     {
@@ -63,11 +62,12 @@ public class Player : MonoBehaviour
 
     IEnumerator SpeedBoostDuration()
     {
+        var music = Component.FindObjectOfType<MusicController>();
+        music.FastSpeed();
         this.speed *= 1.5f;
         yield return new WaitForSeconds(10);
-        
+        music.NormalSpeed();
         this.speed *= 2/3f;
-        
     }
 
 

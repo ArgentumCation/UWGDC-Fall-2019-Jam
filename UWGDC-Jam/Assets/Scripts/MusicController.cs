@@ -22,4 +22,16 @@ public class MusicController : MonoBehaviour
         main.volume = 1;
         glitch.volume = 0;
     }
+
+    public void FastSpeed()
+    {
+        main.pitch = 1.5f;
+        glitch.pitch = 1.5f;
+    }
+
+    public void NormalSpeed()
+    {
+        main.pitch = 1;
+        glitch.pitch = 1;
+    }
 }
