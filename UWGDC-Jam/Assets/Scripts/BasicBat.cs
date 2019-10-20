@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BasicBat : MonoBehaviour
 {
-
     private BoxCollider2D batHitBox;
     private SpriteRenderer batBody;
     private bool isSwinging = false;
+    private AudioSource sound;
 
-    private Vector3 fistMovement = new Vector3(-0.18f, 0.23f, 0);
+    private Vector3 fistMovement = new Vector3(0.0f, 0.34f, 0);
     
 
     // Start is called before the first frame update
@@ -21,6 +21,8 @@ public class BasicBat : MonoBehaviour
         batBody = GetComponent<SpriteRenderer>();
         batHitBox.enabled = false;
         batBody.enabled = false;
+
+        sound = GetComponent<AudioSource>();
     }
 
 
@@ -45,14 +47,15 @@ public class BasicBat : MonoBehaviour
 
     public IEnumerator swing()
     {
+        sound.Play();
         batHitBox.enabled = true;
         batBody.enabled = true;
         isSwinging = true;
+        this.transform.localPosition = fistMovement;
         yield return new WaitForSeconds(0.1f);
         isSwinging = false;
         batHitBox.enabled = false;
         batBody.enabled = false;
-        this.transform.localPosition = new Vector3(-0.18f, 0.23f, 0);
     }
 
 
