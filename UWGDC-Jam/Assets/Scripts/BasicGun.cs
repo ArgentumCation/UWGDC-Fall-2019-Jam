@@ -6,11 +6,24 @@ public class BasicGun : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public int ammo;
+    public bool isGlitch;
     private AudioSource sound;
 
     void Start()
     {
         sound = GetComponent<AudioSource>();
+    }
+
+    void OnEnable()
+    {
+        if (isGlitch)
+            Component.FindObjectOfType<MusicController>().Glitch();
+    }
+
+    void OnDisable()
+    {
+        if (isGlitch)
+            Component.FindObjectOfType<MusicController>().Main();
     }
 
     void Update()
