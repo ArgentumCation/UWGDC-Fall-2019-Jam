@@ -89,11 +89,11 @@ public class Player : MonoBehaviour
 
     public void GiveItem(GameObject item)
     {
+        if (weapon != null)
+            Destroy(weapon.gameObject);
         item.transform.parent = transform;
         item.transform.localPosition = Vector3.zero;
         item.transform.localRotation = Quaternion.identity;
-        if (weapon != null)
-            Destroy(weapon.gameObject);
         weapon = item;
     }
 }
