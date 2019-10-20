@@ -8,6 +8,7 @@ public class Robot : BasicGun
     private const float RATE = 0.5f;
 
     private bool activated = false;
+    public AudioSource activateSound;
 
     public override void Start()
     {
@@ -20,6 +21,7 @@ public class Robot : BasicGun
         {
             transform.localScale *= 2;
             activated = true;
+            activateSound.Play();
             StartCoroutine(RobotCo());
         }
     }
