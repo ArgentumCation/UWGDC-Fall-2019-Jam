@@ -8,7 +8,7 @@ Need art:
 - ~~Power glove~~
 - ~~Token (health)~~
 - Roller skates
-- Robot
+- ~~Robot~~
 
 Don't need art:
 - glitch grenade
