@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D body;
     private bool mouseAim = true;
     private GameObject weapon;
+    private float startingBoostTime = 0f;
 
     void Start()
     {
@@ -48,6 +49,29 @@ public class Player : MonoBehaviour
         if (aim.magnitude > 0.01)
             transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, aim));
     }
+
+
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        var speedBooster = collision.gameObject.GetComponent<SpeedBoost>();
+        if (speedBooster != null)
+        {
+            StartCoroutine(SpeedBoostDuration());
+        }
+    }
+
+    IEnumerator SpeedBoostDuration()
+    {
+        this.speed *= 1.5f;
+        yield return new WaitForSeconds(10);
+        
+        this.speed *= 2/3f;
+        
+    }
+
+
+
 
     public void Hurt(float amount)
     {
