@@ -1557,7 +1557,7 @@ MonoBehaviour:
     type: 3}
   spawnTimeMin: 0.5
   spawnTimeMax: 0.5
-  spawnCount: 20
+  spawnCount: 25
   allEnemiesDead: {fileID: 1094801327}
 --- !u!61 &1006244299
 BoxCollider2D:
@@ -2167,11 +2167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d6cec357fd590428627c69c4fae2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8304867230985532577, guid: eb962ea300ac2b44a9286d060bb1c686,
+  enemyPrefab: {fileID: 8304867230985532577, guid: 0125e2be6d138674cbed0c4d0c030cc5,
     type: 3}
-  spawnTimeMin: 1
-  spawnTimeMax: 4
-  spawnCount: 10
+  spawnTimeMin: 3
+  spawnTimeMax: 5
+  spawnCount: 6
   allEnemiesDead: {fileID: 1002536429}
 --- !u!61 &1689827513
 BoxCollider2D:
