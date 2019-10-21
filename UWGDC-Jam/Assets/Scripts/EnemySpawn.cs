@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 public class EnemySpawn : MonoBehaviour
 {
+    public GameObject[] enemyPrefabs = new GameObject[0];
     private BoxCollider2D[] spawnBoxes;
     public string waveText;
-    public GameObject enemyPrefab;
     public float spawnTimeMin, spawnTimeMax;
     public int spawnCount;
     private float nextSpawnTime;
@@ -24,7 +24,7 @@ public class EnemySpawn : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        spawnBoxes = GetComponentsInChildren<BoxCollider2D>();
+        spawnBoxes = transform.parent.GetComponentsInChildren<BoxCollider2D>();
         SetNextSpawnTime();
         nextSpawnTime += 6;
         spawned = 0;
@@ -41,7 +41,7 @@ public class EnemySpawn : MonoBehaviour
             SetNextSpawnTime();
             Bounds bounds = spawnBoxes[Random.Range(0, spawnBoxes.Length)].bounds; // world space
             Vector3 pointInBounds = new Vector3(Random.Range(bounds.min.x, bounds.max.x), Random.Range(bounds.min.y, bounds.max.y), 0);
-            var enemy = Instantiate(enemyPrefab);
+            var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)]);
             enemy.transform.position = pointInBounds;
             enemy.transform.parent = transform;
             spawned++;
