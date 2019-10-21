@@ -2808,7 +2808,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 8304867230985532577, guid: 0125e2be6d138674cbed0c4d0c030cc5, type: 3}
   - {fileID: 8304867230985532577, guid: 3033a97e0303b924a90da16ce1841504, type: 3}
-  waveText: WAVE 2
+  waveText: WAVE 4
   spawnTimeMin: 0.3
   spawnTimeMax: 1
   spawnCount: 30
