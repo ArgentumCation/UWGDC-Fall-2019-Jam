@@ -120,13 +120,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 15
-  speed: 3
   dropProb: 0.1
   droppedItems:
   - {fileID: 197646614027980115, guid: 77b8622750600764abaec2b16f7925da, type: 3}
   - {fileID: 5248359460564429186, guid: 1435140dde46d98439aaf3665133075c, type: 3}
   - {fileID: 2342562024584061314, guid: e9ba916b3a689e44bb6e584d29c36a4e, type: 3}
-  aiPath: {fileID: 0}
 --- !u!61 &9186899044702074492
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -208,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radius: 0.45
+  radius: 1
   height: 0.01
   repathRate: 0.2
   canSearch: 1

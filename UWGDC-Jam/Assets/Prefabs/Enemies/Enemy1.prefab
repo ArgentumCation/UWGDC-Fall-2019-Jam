@@ -146,7 +146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 3
-  speed: 2
   dropProb: 0.13
   droppedItems:
   - {fileID: 6700673988156432223, guid: 1dfe178f23aa404479731f1e223c5d9e, type: 3}
@@ -155,7 +154,7 @@ MonoBehaviour:
   - {fileID: 1287445661301900486, guid: 57e025aa2ef18ae458571e3d1dcc9ed8, type: 3}
   - {fileID: 5230800647548722986, guid: 2c18ae91d54d4be49bc777f58b98ce0a, type: 3}
   - {fileID: 5248359460564429186, guid: 1435140dde46d98439aaf3665133075c, type: 3}
-  aiPath: {fileID: 0}
+  - {fileID: 2342562024584061314, guid: e9ba916b3a689e44bb6e584d29c36a4e, type: 3}
 --- !u!114 &6792945005656901709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,12 +210,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radius: 0.45
+  radius: 1
   height: 0.01
   repathRate: 0.2
   canSearch: 1
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 2
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2

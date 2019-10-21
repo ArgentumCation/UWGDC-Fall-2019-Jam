@@ -7,10 +7,8 @@ public class EnemyCharacter : EnemyClass
 {
     private Player target;
     private Rigidbody2D body;
-    public float speed;
     public float dropProb = 0.1f;
     public List<GameObject> droppedItems = new List<GameObject>();
-    private bool moveToPlayer = true;
 
     private AIPath aiPath;
 
@@ -20,6 +18,7 @@ public class EnemyCharacter : EnemyClass
         target = Component.FindObjectOfType<Player>();
         body = GetComponent<Rigidbody2D>();
         aiPath = GetComponent<AIPath>();
+        GetComponent<AIDestinationSetter>().target = target.transform;
     }
 
     private Vector3 VectorToTarget()
@@ -37,16 +36,6 @@ public class EnemyCharacter : EnemyClass
         return v;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        
-            if (moveToPlayer)
-            {
-                body.velocity = VectorToTarget() * speed;
-            }
-    }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         var player = collision.gameObject.GetComponent<Player>();
@@ -60,13 +49,11 @@ public class EnemyCharacter : EnemyClass
     IEnumerator JumpBack()
     {
         if (aiPath != null)
-            aiPath.enabled = false; 
-        moveToPlayer = false;
+            aiPath.enabled = false;
         body.isKinematic = true;
         body.velocity = VectorToTarget() * -12;
         yield return new WaitForSeconds(0.1f);
         body.isKinematic = false;
-        moveToPlayer = true;
         if (aiPath != null)
             aiPath.enabled = true;
     }

@@ -39,7 +39,7 @@ public class BasicBat : MonoBehaviour
         }
         if (isSwinging)
         {
-            this.transform.localPosition += new Vector3(0.05f, 0, 0);
+            this.transform.localPosition += new Vector3(2f, 0, 0) * Time.deltaTime;
         }
     }
 
