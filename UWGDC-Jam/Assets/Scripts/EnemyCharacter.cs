@@ -7,7 +7,9 @@ public class EnemyCharacter : EnemyClass
     private Player target;
     private Rigidbody2D body;
     public float speed;
+    public List<GameObject> droppedItems = new List<GameObject>();
     private bool moveToPlayer = true;
+    private const float DROP_PROB = 0.1f;
     
 
     // Start is called before the first frame update
@@ -65,5 +67,16 @@ public class EnemyCharacter : EnemyClass
     {
         base.Hurt(amount);
         StartCoroutine(JumpBack());
+    }
+
+    public override void OnKilled()
+    {
+        base.OnKilled();
+        if (Random.value < DROP_PROB)
+        {
+            int dropI = Random.Range(0, droppedItems.Count);
+            var item = Instantiate(droppedItems[dropI]);
+            item.transform.position = transform.position;
+        }
     }
 }

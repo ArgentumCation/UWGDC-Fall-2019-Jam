@@ -16,8 +16,11 @@ public class EnemyClass : MonoBehaviour
     {
         if (enemyHealth <= 0)
         {
-            Destroy(gameObject);
             GameObject.Find("Explosion").GetComponent<AudioSource>().Play();
+            OnKilled();
+            Destroy(gameObject);
         }
     }
+
+    public virtual void OnKilled() { }
 }

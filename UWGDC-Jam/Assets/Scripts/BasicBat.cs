@@ -66,7 +66,6 @@ public class BasicBat : MonoBehaviour
         if (Enemy != null && isSwinging == true)
         {
             Enemy.Hurt(batDamage);
-            Debug.Log("Hit");
             isSwinging = false;
         }
     }

@@ -144,3 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 10
   speed: 3
+  droppedItems:
+  - {fileID: 197646614027980115, guid: 77b8622750600764abaec2b16f7925da, type: 3}
+  - {fileID: 5230800647548722986, guid: 2c18ae91d54d4be49bc777f58b98ce0a, type: 3}
+  - {fileID: 2342562024584061314, guid: e9ba916b3a689e44bb6e584d29c36a4e, type: 3}
