@@ -12,13 +12,14 @@ public class EnemyCharacter : EnemyClass
     public List<GameObject> droppedItems = new List<GameObject>();
     private bool moveToPlayer = true;
 
-    public AIPath aiPath;
+    private AIPath aiPath;
 
     // Start is called before the first frame update
     void Start()
     {
         target = Component.FindObjectOfType<Player>();
         body = GetComponent<Rigidbody2D>();
+        aiPath = GetComponent<AIPath>();
     }
 
     private Vector3 VectorToTarget()
@@ -58,18 +59,16 @@ public class EnemyCharacter : EnemyClass
 
     IEnumerator JumpBack()
     {
-        GetComponent<Pathfinding.AIPath>().enabled = false; 
-
+        if (aiPath != null)
+            aiPath.enabled = false; 
         moveToPlayer = false;
         body.isKinematic = true;
         body.velocity = VectorToTarget() * -12;
         yield return new WaitForSeconds(0.1f);
-        GetComponent<Pathfinding.AIPath>().enabled = true;
         body.isKinematic = false;
         moveToPlayer = true;
-
-        
-
+        if (aiPath != null)
+            aiPath.enabled = true;
     }
 
     public override void Hurt(float amount)
