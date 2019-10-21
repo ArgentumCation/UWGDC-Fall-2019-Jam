@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class EnemyCharacter : EnemyClass
 {
@@ -10,7 +11,8 @@ public class EnemyCharacter : EnemyClass
     public float dropProb = 0.1f;
     public List<GameObject> droppedItems = new List<GameObject>();
     private bool moveToPlayer = true;
-    
+
+    public AIPath aiPath;
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +39,11 @@ public class EnemyCharacter : EnemyClass
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (moveToPlayer)
-        {
-            body.velocity = VectorToTarget() * speed;
-        }
+        
+            if (moveToPlayer)
+            {
+                body.velocity = VectorToTarget() * speed;
+            }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -55,12 +58,18 @@ public class EnemyCharacter : EnemyClass
 
     IEnumerator JumpBack()
     {
+        GetComponent<Pathfinding.AIPath>().enabled = false; 
+
         moveToPlayer = false;
         body.isKinematic = true;
         body.velocity = VectorToTarget() * -12;
         yield return new WaitForSeconds(0.1f);
+        GetComponent<Pathfinding.AIPath>().enabled = true;
         body.isKinematic = false;
         moveToPlayer = true;
+
+        
+
     }
 
     public override void Hurt(float amount)

@@ -5,22 +5,16 @@ using UnityEngine.Events;
 
 public class EnemySpawn : MonoBehaviour
 {
-    private BoxCollider2D spawnBox;
+    private BoxCollider2D[] spawnBoxes;
+    public string waveText;
     public GameObject enemyPrefab;
     public float spawnTimeMin, spawnTimeMax;
     public int spawnCount;
     private float nextSpawnTime;
     private int spawned;
 
-    public DelaySequence allEnemiesDead;
+    public EnemySpawn nextWave;
     private bool calledDeadEvent = false;
-
-    void OnEnable()
-    {
-        SetNextSpawnTime();
-        spawned = 0;
-        calledDeadEvent = false;
-    }
 
     private void SetNextSpawnTime()
     {
@@ -28,9 +22,15 @@ public class EnemySpawn : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
-        spawnBox = GetComponent<BoxCollider2D>();
+        spawnBoxes = GetComponentsInChildren<BoxCollider2D>();
+        SetNextSpawnTime();
+        nextSpawnTime += 6;
+        spawned = 0;
+        calledDeadEvent = false;
+        yield return new WaitForSeconds(3.0f);
+        GameObject.Find("EventText").GetComponent<EventMessage>().ShowMesssage(waveText);
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class EnemySpawn : MonoBehaviour
         if (Time.time > nextSpawnTime && spawned < spawnCount)
         {
             SetNextSpawnTime();
-            Bounds bounds = spawnBox.bounds; // world space
+            Bounds bounds = spawnBoxes[Random.Range(0, spawnBoxes.Length)].bounds; // world space
             Vector3 pointInBounds = new Vector3(Random.Range(bounds.min.x, bounds.max.x), Random.Range(bounds.min.y, bounds.max.y), 0);
             var enemy = Instantiate(enemyPrefab);
             enemy.transform.position = pointInBounds;
@@ -50,7 +50,8 @@ public class EnemySpawn : MonoBehaviour
         if (spawned == spawnCount && !calledDeadEvent && transform.childCount == 0)
         {
             calledDeadEvent = true;
-            allEnemiesDead.ThresholdTrigger();
+            if (nextWave != null)
+                nextWave.enabled = true;
         }
     }
 }
