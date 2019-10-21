@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 53235418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ddr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ Transform:
   - {fileID: 6664301664112920058}
   - {fileID: 548858865}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &53328015
 GameObject:
@@ -763,6 +763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ddr-pad (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664301662946394476, guid: f6cee69a4fecb074881770fc4f55b40f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6664301662946394478, guid: f6cee69a4fecb074881770fc4f55b40f,
         type: 3}
@@ -1984,7 +1989,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &996717114
 PrefabInstance:
@@ -3566,6 +3571,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ddr-pad
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664301662946394476, guid: f6cee69a4fecb074881770fc4f55b40f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6664301662946394478, guid: f6cee69a4fecb074881770fc4f55b40f,
         type: 3}
