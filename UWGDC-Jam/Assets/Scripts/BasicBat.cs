@@ -9,7 +9,7 @@ public class BasicBat : MonoBehaviour
     private bool isSwinging = false;
     private AudioSource sound;
 
-    private Vector3 fistMovement = new Vector3(0.0f, 0.34f, 0);
+    private Vector3 fistMovement = new Vector3(0.0f, 0.15f, 0);
     
 
     // Start is called before the first frame update
@@ -39,7 +39,7 @@ public class BasicBat : MonoBehaviour
         }
         if (isSwinging)
         {
-            this.transform.localPosition += new Vector3(0.15f, 0, 0);
+            this.transform.localPosition += new Vector3(0.05f, 0, 0);
         }
     }
 
