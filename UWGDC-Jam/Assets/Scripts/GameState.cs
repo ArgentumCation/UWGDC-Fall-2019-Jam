@@ -9,5 +9,8 @@ public class GameState : MonoBehaviour
     {
         if (Input.GetButtonDown("Restart"))
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if(Input.GetButtonDown("Quit"))
+            Application.Quit();
+           
     }
 }

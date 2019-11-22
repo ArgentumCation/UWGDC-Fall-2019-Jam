@@ -560,18 +560,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &809785363 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3394558190572741823, guid: 29425102199c07c4999ff37fda2adb37,
-    type: 3}
-  m_PrefabInstance: {fileID: 3394558190300396716}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6711d4c735cc2ae449cbbf4b1daca676, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &818244094
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +571,7 @@ GameObject:
   - component: {fileID: 818244097}
   - component: {fileID: 818244096}
   - component: {fileID: 818244095}
+  - component: {fileID: 818244098}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -655,6 +644,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &818244098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818244094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1691454acccdeb488e775ccd54468a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &884058403
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,38 +775,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e636667307c3748ad19d4022a94219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startThreshold: 4
-  sequence:
-  - delay: 3
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 809785363}
-          m_MethodName: ShowMesssage
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: WAVE 3
-            m_BoolArgument: 0
-          m_CallState: 2
-  - delay: 3
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1647258284}
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
 --- !u!1 &1006244297
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,38 +894,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e636667307c3748ad19d4022a94219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startThreshold: 1
-  sequence:
-  - delay: 3
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 809785363}
-          m_MethodName: ShowMesssage
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: WAVE 2
-            m_BoolArgument: 0
-          m_CallState: 2
-  - delay: 3
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 135671284}
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
 --- !u!114 &1461682058 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1820998212913470849, guid: f4fcdd2eebc0e4a4a95a10af0106ac8d,
@@ -1074,38 +1011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e636667307c3748ad19d4022a94219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startThreshold: 0
-  sequence:
-  - delay: 3
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 809785363}
-          m_MethodName: ShowMesssage
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: WAVE 1
-            m_BoolArgument: 0
-          m_CallState: 2
-  - delay: 3
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1006244297}
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
 --- !u!4 &1575367000
 Transform:
   m_ObjectHideFlags: 0
@@ -1618,6 +1523,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1820998212913470849, guid: f4fcdd2eebc0e4a4a95a10af0106ac8d,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 818244098}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4fcdd2eebc0e4a4a95a10af0106ac8d, type: 3}
 --- !u!1001 &2733802975212718423

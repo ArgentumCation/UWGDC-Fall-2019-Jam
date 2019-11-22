@@ -12,12 +12,14 @@ public class Player : MonoBehaviour
     private Rigidbody2D body;
     private bool mouseAim = true;
     private GameObject weapon;
-
+    public Screenshake camera;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         hurtSound = GetComponent<AudioSource>();
         render = GetComponentInChildren<SpriteRenderer>();
+        
+
     }
 
     void Update()
@@ -78,6 +80,7 @@ public class Player : MonoBehaviour
         health -= amount;
         if (health > 0)
         {
+            //camera.TriggerShake();
             hurtSound.Play();
             StartCoroutine(HurtFlash());
         }

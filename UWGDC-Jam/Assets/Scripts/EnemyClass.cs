@@ -1,14 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyClass : MonoBehaviour
 {
     public float enemyHealth = 20;
+    
+
+    public void Start()
+    {
+       
+    }
 
     public virtual void Hurt(float amount)
     {
         enemyHealth -= amount;
+       
+        
     }
 
     // Update is called once per frame

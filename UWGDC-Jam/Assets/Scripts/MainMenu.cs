@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Restart"))
+        if (Input.anyKey)
             PlayGame();
     }
     public void PlayGame()

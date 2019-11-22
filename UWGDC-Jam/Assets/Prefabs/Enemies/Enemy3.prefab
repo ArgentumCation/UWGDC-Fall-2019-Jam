@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 15
-  dropProb: 0.1
+  dropProb: 0.33
   droppedItems:
   - {fileID: 197646614027980115, guid: 77b8622750600764abaec2b16f7925da, type: 3}
   - {fileID: 5248359460564429186, guid: 1435140dde46d98439aaf3665133075c, type: 3}

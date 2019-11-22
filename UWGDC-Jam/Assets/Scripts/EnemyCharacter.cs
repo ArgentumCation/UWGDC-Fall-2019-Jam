@@ -9,7 +9,7 @@ public class EnemyCharacter : EnemyClass
     private Rigidbody2D body;
     public float dropProb = 0.1f;
     public List<GameObject> droppedItems = new List<GameObject>();
-
+    public new static Screenshake camera;
     private AIPath aiPath;
 
     // Start is called before the first frame update
@@ -19,6 +19,8 @@ public class EnemyCharacter : EnemyClass
         body = GetComponent<Rigidbody2D>();
         aiPath = GetComponent<AIPath>();
         GetComponent<AIDestinationSetter>().target = target.transform;
+        if(camera == null)
+            camera = FindObjectOfType<Screenshake>();
     }
 
     private Vector3 VectorToTarget()
@@ -61,11 +63,13 @@ public class EnemyCharacter : EnemyClass
     public override void Hurt(float amount)
     {
         base.Hurt(amount);
+        
         StartCoroutine(JumpBack());
     }
 
     public override void OnKilled()
     {
+        camera.TriggerShake();
         base.OnKilled();
         if (Random.value < dropProb)
         {
