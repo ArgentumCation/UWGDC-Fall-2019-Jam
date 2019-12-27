@@ -1,15 +1,10 @@
-- Top down
-- Zerg Rush esque
+# Untitled Jam Game
 
-## Pickups
+## Made for the University of Washington Game Development Club's Fall 2019 Game Jam
 
-Need art:
-- ~~Zapper~~
-- ~~Power glove~~
-- ~~Token (health)~~
-- Roller skates
-- ~~Robot~~
+# Screenshots
+![](images/img1.png)
 
-Don't need art:
-- glitch grenade
-- double zapper
+![](images/img2.png)
+
+![](images/img3.png)
