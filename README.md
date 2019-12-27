@@ -3,8 +3,8 @@
 ## Made for the University of Washington Game Development Club's Fall 2019 Game Jam
 
 # Screenshots
-![](images/img1.png)
+![](images/image3.png)
 
-![](images/img2.png)
+![](images/image2.png)
 
-![](images/img3.png)
+![](images/image1.png)
