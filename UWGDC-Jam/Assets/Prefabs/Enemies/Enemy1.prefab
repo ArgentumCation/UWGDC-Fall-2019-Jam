@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 3
-  dropProb: 0.25
+  dropProb: 0.125
   droppedItems:
   - {fileID: 6700673988156432223, guid: 1dfe178f23aa404479731f1e223c5d9e, type: 3}
   - {fileID: 6700673988156432223, guid: 1dfe178f23aa404479731f1e223c5d9e, type: 3}
